@@ -1,0 +1,39 @@
+name: check-workflow
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-formatting-and-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install cargo-binstall
+        uses: cargo-bins/cargo-binstall@v1.20.0
+      - name: Check pre-commit hooks
+        uses: pre-commit/action@v3.0.1
+      - name: Install typstyle
+        run: cargo binstall typstyle
+      - name: Check typstyle formatting
+        run: typstyle . --check --line-width 100
+      - name: Install typst
+        uses: typst-community/setup-typst@v5
+      - name: Install utpm
+        run: cargo binstall -y utpm
+
+      - name: Install the package
+        run: utpm pkg install .
+      - name: Compile the template
+        run: |
+          typst compile --font-path ./fonts template/report.typ
+      - name: Upload the compiled PDFs
+        uses: actions/upload-artifact@v7
+        with:
+          name: compiled-pdfs
+          path: |
+            template/report.pdf

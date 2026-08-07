@@ -1,0 +1,13 @@
+[package]
+name = "sjf-report"
+version = "0.1.0"
+entrypoint = "src/lib.typ"
+authors = ["Jacques Supcik <jacques.supcik@hefr.ch>"]
+license = "MIT"
+description = "Typst template for SJF project reports"
+categories = ["layout"]
+
+[template]
+path = "template"
+entrypoint = "report.typ"
+thumbnail = "thumbnail.png"
