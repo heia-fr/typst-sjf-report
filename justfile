@@ -3,3 +3,6 @@ thumbnail:
 
 install:
     utpm pkg install .
+
+unlink:
+    utpm pkg unlink -y @local/sjf-report
