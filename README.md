@@ -46,7 +46,7 @@ typst compile report.typ
 | Field   | Value                                   |
 |---------|-----------------------------------------|
 | Name    | `heia-fr/typst-sjf-report`              |
-| Version | `0.1.0`                                 |
+| Version | `0.2.0`                                 |
 | License | CC0 1.0 Universal                       |
 | Author  | Jacques Supcik <jacques.supcik@hefr.ch> |
 

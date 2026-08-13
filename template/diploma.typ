@@ -1,4 +1,4 @@
-#import "@local/sjf-report:0.1.0": diploma
+#import "@local/sjf-report:0.2.0": diploma
 
 #let student_name = [Yoshiki Soda]
 

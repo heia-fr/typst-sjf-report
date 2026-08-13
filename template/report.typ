@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: CC0-1.0
 
-#import "@local/sjf-report:0.1.0": report
+#import "@local/sjf-report:0.2.0": report
 #import "@preview/muchpdf:0.1.2": muchpdf
 
 #set text(font: "Fira Sans", weight: "light", lang: "en", size: 12pt)
