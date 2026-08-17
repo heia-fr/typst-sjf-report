@@ -37,6 +37,11 @@ search = "sjf-report:{current_version}"
 replace = "sjf-report:{new_version}"
 
 [[tool.bumpversion.files]]
+filename = "template/poster.typ"
+search = "sjf-report:{current_version}"
+replace = "sjf-report:{new_version}"
+
+[[tool.bumpversion.files]]
 filename = "README.md"
 search = "| Version | `{current_version}`"
 replace = "| Version | `{new_version}`"
