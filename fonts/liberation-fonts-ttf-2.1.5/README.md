@@ -1,7 +1,7 @@
   Liberation Fonts
   =================
 
-  The Liberation Fonts is font collection which aims to provide document 
+  The Liberation Fonts is font collection which aims to provide document
   layout compatibility as usage of Times New Roman, Arial, Courier New.
 
 
@@ -19,7 +19,7 @@
         ```
    	    $ git clone https://github.com/liberationfonts/liberation-fonts.git
         ```
-    
+
      - Or downloading the tar.gz file from [releases](https://github.com/fontforge/fontforge/releases).
 
      - Extract the tar file:
@@ -30,17 +30,17 @@
         ```
     	$ cd liberation-fonts    or   $ cd liberation-fonts-[VERSION]
     	$ make
-    	```	
+    	```
      The binary font files will be available in 'liberation-fonts-ttf-[VERSION]' directory.
 
   3. Install to system
-        
-        Fedora Users : 
-        - One can manually install the fonts by copying the TTFs to `~/.fonts` for user wide usage 
-        - and/or to `/usr/share/fonts/liberation` for system-wide availability. 
+
+        Fedora Users :
+        - One can manually install the fonts by copying the TTFs to `~/.fonts` for user wide usage
+        - and/or to `/usr/share/fonts/liberation` for system-wide availability.
         - Then, run `fc-cache` to let that cached.
 
-        Other distributions : 
+        Other distributions :
         please check out corresponding documentation.
 
 
@@ -70,7 +70,7 @@
         ```
         $ make versionupdate
         ```
-        can verfy changes using ftinfo/otfinfo or fontforge itself. 
+        can verfy changes using ftinfo/otfinfo or fontforge itself.
   3. It is highly recommended that file 'ChangeLog' is updated to reflect changes.
 
   4. Create a tarball with the following command:
@@ -78,7 +78,7 @@
         $ make dist
         ```
         The new versioned tarball will be available in the dist/ folder as `liberation-fonts-[NEW_VERSION].tar.gz.`
-  5. Create github tag for that [NEW_VERSION] and upload dist tarball 
+  5. Create github tag for that [NEW_VERSION] and upload dist tarball
 
   Credits
  ============
