@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: CC0-1.0
 
-#import "@local/sjf-report:0.2.0": poster
+#import "@local/sjf-report:0.3.0": poster
 
 #set text(font: "Liberation Sans")
 
