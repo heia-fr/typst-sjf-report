@@ -89,11 +89,11 @@
 
   doc,
 ) = {
-  set text(font: "Fira Sans", weight: "light", size: 8pt)
+  set text(font: "Fira Sans", weight: "light", size: 10pt)
   set page(
     paper: "a4",
     margin: (
-      top: 0mm,
+      top: 20mm,
       bottom: 0mm,
       left: 0mm,
       right: 0mm,
@@ -105,21 +105,20 @@
   place(
     top + center,
     dx: -0.5mm,
-    dy: 38mm,
     text(weight: "bold", date_location),
   )
 
   place(
     top + center,
     dx: -0.5mm,
-    dy: 48mm,
-    text(weight: "semibold", size: 25pt, fill: rgb("f5a26c"), certificate_title),
+    dy: 10mm,
+    text(weight: "semibold", size: 2.5em, fill: rgb("f5a26c"), certificate_title),
   )
 
   place(
     top + center,
     dx: -0.5mm,
-    dy: 66mm,
+    dy: 28mm,
     box(
       width: 125mm,
       height: 100%,
@@ -133,7 +132,7 @@
 
         #student_name #student_role a research project with the title:
 
-        #align(center, text(size: 9pt, weight: "bold", [#title]))
+        #align(center, text(size: 1.2em, weight: "bold", [#title]))
         #v(3mm)
 
         #doc
@@ -144,15 +143,13 @@
   place(
     bottom + left,
     dx: 129mm,
-    dy: -58mm,
-    text(size: 10pt, weight: "bold", fill: rgb("f5a26c"), [SWISS YOUTH IN SCIENCE]),
-  )
+    block(
+      height: 60mm,
 
-  place(
-    top + center,
-    dx: 0mm,
-    dy: 155mm,
-    signature,
+      [#set align(top)
+        #text(size: 10pt, weight: "bold", fill: rgb("f5a26c"), [SWISS YOUTH IN SCIENCE])\
+        #signature],
+    ),
   )
 
   place(bottom + right, dx: -9mm, dy: -9mm, [
@@ -164,4 +161,70 @@
     #set text(size: 12pt)
     #study_week_descr #study_week_year
   ])
+}
+// ---------- Poster ----------
+
+#let poster(
+  title: [#highlight[project title here]],
+  school_logo: image("img/logo_heiafr.svg", width: 300mm),
+  names_and_schools: [#highlight[names and schools of you or your group]],
+  supervisor: [#highlight[name of your supervisor(s)]],
+  doc,
+) = {
+  set page(
+    paper: "a0",
+    margin: (
+      top: 140mm,
+      bottom: 12mm,
+      left: 44mm,
+      right: 44mm,
+    ),
+    background: align(left + top, image("img/sjf_logo.svg", width: 296mm)),
+  )
+  set text(size: 40pt)
+
+  place(
+    top + right,
+    dy: -115mm,
+    school_logo,
+  )
+
+  place(
+    bottom + center,
+    dy: -40mm,
+    line(
+      stroke: 1.5mm,
+      length: 104%,
+    ),
+  )
+
+  place(
+    bottom + left,
+    {
+      set text(size: 36pt)
+      align(horizon, stack(
+        dir: ltr,
+        [
+          Many thanks to our\
+          main sponsor],
+        h(1em),
+        image("img/logo_hasler_stiftung.svg", height: 27.5mm),
+        h(1fr),
+        [
+          and proud host of the\
+          Closing Ceremony],
+        h(1em),
+        image("img/HSLU_logo.svg", height: 20.5mm),
+      ))
+    },
+  )
+  text(size: 96pt, weight: "bold", title)
+  parbreak()
+  text(weight: "bold", names_and_schools)
+  linebreak()
+  text([ Supervised by: #supervisor ])
+
+  align(center, line(stroke: 1.5mm, length: 104%))
+
+  doc
 }

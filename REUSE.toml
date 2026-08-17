@@ -6,6 +6,7 @@ path = [
     "**/*.png",
     "**/*.svg",
     "**/*.toml",
+    "**/img/*.pdf",
     "justfile",
     "README.md",
     ".gitignore",
